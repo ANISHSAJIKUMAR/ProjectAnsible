@@ -1,0 +1,6 @@
+---
+  - hosts: all
+    become: true
+    tasks:
+    - name: create docker container
+      shell: docker run -d --name anish_test -p 8090:8080 8857890900/anish_test
