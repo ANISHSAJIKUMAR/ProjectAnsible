@@ -1,6 +1,7 @@
  ---
   - hosts: web-servers
     become: true
+    
     tasks:
      - name: stop previous version docker
        shell: docker stop anish_test
@@ -9,5 +10,5 @@
      - name: remove docker images
        shell: docker image rm -f 8857890900/anish_test
        
-     - name: create docker image
+     - name: create docker Container
        shell: docker run -d --name anish_test -p 8090:8080 8857890900/anish_test
