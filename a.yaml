@@ -3,5 +3,11 @@
   become_method: sudo
     
   tasks:
+     - name: stop previous version docker
+       shell: docker stop anish_container
+     - name: remove stopped container
+       shell: docker rm -f anish_container	  
+     - name: remove docker images
+       shell: docker image rm -f 8857890900/anish_test
      - name: create docker Container
        shell: docker run -d --name anish_container -p 8090:8080 8857890900/anish_test
