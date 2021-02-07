@@ -4,4 +4,4 @@
     
   tasks:
      - name: create docker Container
-       shell: docker run -d --name anish_test -p 8090:8080 8857890900/anish_test
+       shell: docker run -d --name anish_container -p 8090:8080 8857890900/anish_test
