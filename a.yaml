@@ -1,6 +1,7 @@
  ---
-  - hosts: web-servers
+  - hosts: all
     become: true
+    become_method: sudo
     
     tasks:
      - name: stop previous version docker
