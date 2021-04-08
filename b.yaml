@@ -3,11 +3,5 @@
   become_method: sudo
     
   tasks:
-     - name: stop previous version docker
-       shell: docker stop registry.gitlab.com/tivona-explorer/anish
-     - name: remove stopped container
-       shell: docker rm -f registry.gitlab.com/tivona-explorer/anish	  
-     - name: remove docker images
-       shell: docker image rm -f registry.gitlab.com/tivona-explorer/anish
      - name: create docker Container
        shell: docker run -d -p 8090:8080 registry.gitlab.com/tivona-explorer/anish
