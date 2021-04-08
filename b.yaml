@@ -1,7 +1,18 @@
-- hosts: all
+--- 
+- 
   become: true
   become_method: sudo
-    
-  tasks:
-     - name: create docker Container
-       shell: docker run -d -p 8090:8080 registry.gitlab.com/tivona-explorer/anish
+  hosts: all
+  tasks: 
+    - 
+      name: "stop previous version docker"
+      shell: "docker stop -f anish_container"
+    - 
+      name: "remove stopped container"
+      shell: "docker rm -f anish_container"
+    - 
+      name: "remove docker images"
+      shell: "docker image rm -f registry.gitlab.com/tivona-explorer/anish"
+    - 
+      name: "create docker Container"
+      shell: "docker run -d --name anish_container -p 8090:8080 registry.gitlab.com/tivona-explorer/anish"
