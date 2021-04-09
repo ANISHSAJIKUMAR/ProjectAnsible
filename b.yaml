@@ -6,7 +6,7 @@
   tasks: 
     - 
       name: "stop previous version docker"
-      shell: "docker stop -f anish_container"
+      shell: "docker stop anish_container"
     - 
       name: "remove stopped container"
       shell: "docker rm -f anish_container"
